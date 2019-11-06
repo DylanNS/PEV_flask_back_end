@@ -33,7 +33,8 @@ class Config(AppConfig):
 
 class ProductionConfig(Config):
 
-	APP = 'PATH_FOR_PRODUCTION'
+	#APP = 'PATH_FOR_PRODUCTION'
+	APP = 'app'
 	APP_IMG_FOLDER = os.path.join( APP, 'static', 'images' )
 
 	# RECAPTCHA keys (production)
@@ -43,7 +44,7 @@ class ProductionConfig(Config):
 	#SQLALCHEMY_DATABASE_URI = "mysql+pymysql://db_user:db_pass@localhost/db_name"
 	SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
 
-	SERVER_NAME   = 'www.yourdomain.us'
+	SERVER_NAME   = 'https://smpev.herokuapp.com/'
 	DEBUG         = False
 	TESTING       = False
 
