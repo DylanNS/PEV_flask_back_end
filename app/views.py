@@ -40,7 +40,18 @@ def delete_sensor(sensorID):
     db.session.commit()
     return redirect(url_for('Dashboard'))
 
+@app.route('/is_logged_in')
+def is_logged_in():
 
+    if current_user.is_authenticated:
+        
+        response = {"is_logged_in" : True}
+        
+    else:
+        response = {"is_logged_in" : False}
+    print(response)
+    res = jsonify( response)
+    return res
 # authenticate user
 @app.route('/logout')
 @login_required
