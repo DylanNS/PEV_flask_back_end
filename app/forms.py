@@ -21,4 +21,3 @@ class RegisterForm(FlaskForm):
 class SensorRegisterForm(FlaskForm):
 	sensor_id = IntegerField  (u'Sensor_id'  , validators=[DataRequired()])
 	volume = FloatField(u'Volume', validators=[DataRequired()])
-	time = StringField  (u'Time'      , validators=[DataRequired()])

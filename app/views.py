@@ -181,9 +181,10 @@ def sensor():
         # assign form data to variables
         sensor_id = request.form.get('sensor_id', '', type=int)
         volume = request.form.get('volume', '', type=float) 
-        time     = request.form.get('time'    , '', type=str)               
+        #time     = datetime.now()          
         #parsing strings into datetimes
-        dt_time = datetime.strptime(time,"%d-%m-%Y-%H:%M:%S")
+        #dt_time = datetime(time.strftime("%d/%m/%Y %H:%M:%S"))
+        dt_time = datetime.now()
         sensor = Sensor(sensor_id, volume, dt_time)
         sensor.save()
         msg = 'Sensor Data created, please <a href="' + url_for('login') + '">login</a>' 
